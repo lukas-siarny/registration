@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="" type="text/css">
+  <link rel="stylesheet" type="text/css" href="style.css"> 
+  <script src="https://kit.fontawesome.com/811f36addd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Section signup - default -->
+	<section class="page__signup container">
+		<!-- Left side -->
+		<div class="signup__left">
+			<div class="signup__fixed">
+				<h1 class="title title--signup-h1">We are the best company in the world. So don't hesitate to sing up now!</h1>
+				<p>You became the part of the best comunity in the world. There are acutally no benefits for you. But </p>
+			</div>
+		</div>
+
+		<!-- Sign up form -->
+		<div class="signup__right">
+			<h2 class="title title--signup-h2"><strong>Try it free 7 days</strong> then $20/mo. thereafter</h2>
+			<div class="singup__form-wrapper">
+				<form id="form-signup" enctype="multipart/form-data">
+					<div class="signup__form-group">
+						<input type="text" placeholder="Nickname" name="nickname" class="input--signup input--tovalidate ">
+						<div class="signup__form-error"><img src="images/icon-error.svg" alt="" class="signup__form-error-exmark"></div>
+						<small class="signup__form-validation-massage"><!--Username must be alphanumeric and contains 5 and 20 characters---></small>
+					</div>		
+					<div class="signup__form-group">
+						<input type="text" placeholder="E-mail" name="email" class="input--signup input--tovalidate">
+						<div class="signup__form-error"><img src="images/icon-error.svg" alt="" class="signup__form-error-exmark"></div>
+						<small class="signup__form-validation-massage"><!--E-mail must be a valid address, e.g. me@myaddress.com--></small>
+					</div>									
+					<div class="signup__form-group fg--password">
+						<input type="password" placeholder="Password" name="password" class="input--signup password input--tovalidate">
+						<div class="signup__form-error">
+							<i class="far fa-eye" title="Show password"></i>
+							<img src="images/icon-error.svg" alt="" class="signup__form-error-exmark" class="signup__form-error-exmark">
+						</div>
+						<small class="signup__form-validation-massage"><!--Password must be between 6 - 20 characters long and contains at least one number and one capital latter--></small>
+					</div>							
+					<div class="signup__form-group fg--password">
+						<input type="password" placeholder="Repeat password" name="password-repeat" class="input--signup password-repeat input--tovalidate">
+						<div class="signup__form-error">
+							<i class="far fa-eye" title="Show password"></i>
+							<img src="images/icon-error.svg" alt="" class="signup__form-error-exmark">
+						</div>
+						<small class="signup__form-validation-massage"><!--Passwords must be identical--></small>
+					</div>
+
+					<!-- Signup form optional fields -->
+					<div class="signup__form-optional">
+						<div class="signup__form-optional-title">
+							<h2 class="title title--optional-h2">Optional fields</h2>
+							<small>Fill them now or register and fill them later...</small>							
+						</div>
+
+						<h3 class="title title--optional-h3">Select a profile picture:</h3>
+						<div class="signup__profilepic">
+							<div class="signup__profilepic-left">
+								<img src="images/profilepic_default.png" alt="">
+							</div>	
+							<div class="signup__profilepic-right">
+								<div class="signup__form-group">
+									<input type="text" placeholder="Choose link" name="url-profilepic" class="input--signup-urlprofpic input--tovalidate input--profpicurl">
+									<!--<div class="signup__form-error"></div>-->				
+			  						<div class="signup__form-col input--pd">
+			  							<div class="button-profpic-wrapper">
+			  								<input type="file"  name="url-profilepic" class="input--file">
+			  								<button type="button" class="button button--choose-profpic">Choose file</button>
+			  							</div>
+			  							<button type="button" class="button button--optional button--upload-profpic">Upload</button>	
+			  						</div>
+			  						<small class="signup__form-validation-massage"><!--Enter a valid URL address--></small>
+	  							</div>								
+							</div>	
+						</div>
+
+						<!-- Personal infomration -->
+						<h3 class="title title--optional-h3">Personal infomration:</h3>
+						<div class="signup__form-group">
+							<input type="text" placeholder="First name" name="first-name" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Your first name must contains latter only--></small>
+						</div>
+						<div class="signup__form-group">
+							<input type="text" placeholder="Last name" name="last-name" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Your last name must contains latter only--></small>
+						</div>
+						<div class="signup__form-group">
+							<label for="birthday" class="input__label">Date of birth:</label>
+							<input type="date" name="dob" class="input--signup input--date input--tovalidate">
+							<small class="signup__form-validation-massage"></small>
+						</div>
+						<div class="signup__form-group">
+							<label for="male" class="input__label">Gender:</label><br>						
+							<input type="radio" id="male" name="gender" value="male" class="input--tovalidate">
+							<label for="male">Male</label>
+							<input type="radio" id="female" name="gender" value="female" class="input--tovalidate">
+							<label for="female">Female</label>
+							<input type="radio" id="other" name="gender" value="other" class="input--tovalidate">
+							<label for="other">Other</label>
+							<small class="signup__form-validation-massage"></small>
+						</div>
+
+						<!-- address -->
+						<h3 class="title title--optional-h3">Contact:</h3>
+						<div class="signup__form-group signup__form-col">
+							<div class="input--longer">
+								<input type="text" placeholder="Address" name="address" class="input--signup input--tovalidate">
+								<div class="signup__form-error"></div>
+								<small class="signup__form-validation-massage"><!--Enter valid address--></small>	
+							</div>
+							<div class="input--shorter">
+								<input type="text" placeholder="Street number" name="street-number" class="input--signup input--tovalidate">
+								<div class="signup__form-error"></div>
+								<small class="signup__form-validation-massage"><!--Must be number--></small>									
+							</div>	
+						</div>
+						<div class="signup__form-group">	
+							<input type="text" placeholder="City" name="city" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Your city must contains latter only--></small>	
+						</div>	
+						<div class="signup__form-group">
+							<input type="text" placeholder="Postal code" name="postal-code" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Must be 5 digit number--></small>	
+						</div>	
+						<div class="signup__form-group">
+							<select name="country" class="input__sel-country input--signup">
+								<option selected hidden>Select Country</option>
+							</select>	
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"></small>
+						</div>	
+
+						<!-- Website -->
+						<h3 class="title title--optional-h3">Websites:</h3>
+						<div class="signup__form-group">
+							<input type="text" placeholder="Personal website" name="personal-website" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Enter a valid URL address, e.g. www.mywebsite.com--></small>				
+						</div>		
+						<div class="signup__form-group">		
+							<input type="text" placeholder="Facebook profile" name="fb-profile" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Enter a valid facebook profile link--></small>		
+						</div>	
+						<div class="signup__form-group">
+							<input type="text" placeholder="Instagram profile" name="instagram-profile" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Enter a valid instagram profile link--></small>		
+						</div>	
+						<div class="signup__form-group">	
+							<input type="text" placeholder="Twitter account" name="twitter-account" class="input--signup input--tovalidate">
+							<div class="signup__form-error"></div>
+							<small class="signup__form-validation-massage"><!--Enter a valid twitter accuount link--></small>									
+						</div>	
+
+						<!-- Credit card informaton -->
+						<h3 class="title title--optional-h3">Credit card infomration:</h3>	
+						<div class="signup__form-group signup__form-col">
+							<div class="input--longer">
+								<input type="text" placeholder="Credit card number" name="creditcard-number" class="input--signup input--tovalidate">
+								<div class="signup__form-error"></div>
+								<small class="signup__form-validation-massage"><!--Must 3 digit long number--></small>
+							</div>	
+							<div class="input--shorter">
+								<input type="text" placeholder="CVV" name="creditcard-cvv" class="input--signup input--tovalidate">
+								<div class="signup__form-error"></div>
+								<small class="signup__form-validation-massage"><!--Must be 16 digit long number--></small>
+							</div>	
+						</div>
+						<div class="signup__form-group">
+			               	<label>Expiration Date</label>
+			                <select name="creditcard-month" class="input--tovalidate">
+			                    <option selected hidden>Month</option>
+			                    <option value="01">January</option>
+			                    <option value="02">February </option>
+			                    <option value="03">March</option>
+			                    <option value="04">April</option>
+			                    <option value="05">May</option>
+			                    <option value="06">June</option>
+			                    <option value="07">July</option>
+			                    <option value="08">August</option>
+			                    <option value="09">September</option>
+			                    <option value="10">October</option>
+			                    <option value="11">November</option>
+			                    <option value="12">December</option>
+			                </select>
+			                <select name="creditcard-year" class="input__sel-expyear input--tovalidate">
+			                	<option selected hidden>Year</option>
+			                </select>
+			                <small class="signup__form-validation-massage"></small>
+						</div>					
+					</div>		
+					<div class="signup__form-group signup__form-col">
+						<button type="button" class="button button--optional">Show optional fields</button>
+						<input type="submit" placeholder="Credit card number" name="creditcard-number" id="creditcard-number" value="Register for free" class="button button--register">
+					</div>								
+					<small class="signup__form-terms">By clicking the button, you are agreeing to our Terms and Services</small>	
+				</form>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="main.js"></script>
+</body>
+</html>

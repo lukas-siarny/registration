@@ -1,0 +1,220 @@
+			<div class="singup__already-registered">
+				Already have an account? <strong><a href="/">Login</a></strong>
+			</div>
+
+			<div class="singup__form-wrapper">
+				
+				<div class="message message-warning" style = "<%= typeof errors != "undefined" ? "display: block" : "" %>">
+					<small>Registration failed. Please check your form for errors.</small>
+					<div class="message__btnClose" title="Close Message">X</div>
+				</div>
+
+				<form id="form-singup" method="POST" action="/register">
+					
+					<div class="singup__form-group 
+						<% if (typeof errors != "undefined"){ %> 
+							<%= errors.find(err => err.errorMatchNick) != undefined || errors.find(err => err.errorNickname) != undefined ? `fg--invalid` : ""; %> 
+						<% } %>"
+					>
+						<input type="text" placeholder="Nickname" name="nickname" class="input--singup requied showhints" 
+						value="<%= typeof nickname != "undefined" ? nickname : "" %>">
+						<div class="singup__form-error"><img src="images/icon-error.svg" alt="" class="singup__form-error-exmark"></div>
+						<small class="singup__form-validation-message">
+						<% if (typeof errors != "undefined"){ %>
+							<%= errors.find(err => err.errorMatchNick) != undefined ? errors.find(err => err.errorMatchNick).errorMatchNick : ""; %>
+							<%= errors.find(err => err.errorNickname) != undefined ? errors.find(err => err.errorNickname).errorNickname : ""; %>
+						<% } %>		
+						</small>
+					</div>		
+
+					<div class="singup__form-group 
+						<% if (typeof errors != "undefined"){ %> 
+							<%= errors.find(err => err.errorMatchEmail) != undefined || errors.find(err => err.errorEmail) != undefined ? `fg--invalid` : ""; %> 
+						<% } %>"
+					>
+						<input type="text" placeholder="E-mail" name="email" class="input--singup requied showhints"
+						value="<%= typeof email != "undefined" ? email : "" %>">
+						<div class="singup__form-error"><img src="images/icon-error.svg" alt="" class="singup__form-error-exmark"></div>
+						<small class="singup__form-validation-message">
+						<% if (typeof errors != "undefined"){ %>
+							<%= errors.find(err => err.errorMatchEmail) != undefined ? errors.find(err => err.errorMatchEmail).errorMatchEmail : ""; %>
+							<%= errors.find(err => err.errorEmail) != undefined ? errors.find(err => err.errorEmail).errorEmail : ""; %>
+						<% } %>	
+						</small>
+					</div>		
+
+					<div class="singup__form-group fg--password 
+						<%= typeof password != "undefined" ? `fg--show-passicon` : '' %> 
+						<% if (typeof errors != "undefined"){ %> 
+							<%= errors.find(err => err.errorPassword) != undefined ? `fg--invalid` : ""; %> 
+						<% } %>"
+					>
+						<input type="password" placeholder="Password" name="password" class="input--singup password requied showhints"
+						value="<%= typeof password != "undefined" ? password : "" %>">
+						<div class="singup__form-error">
+							<i class="far fa-eye" title="Show password"></i>
+							<img src="images/icon-error.svg" alt="" class="singup__form-error-exmark" class="singup__form-error-exmark">
+						</div>
+						<small class="singup__form-validation-message">
+							<% if (typeof errors != "undefined"){ %>
+								<%= errors.find(err => err.errorPassword) != undefined ? errors.find(err => err.errorPassword).errorPassword : ""; %>
+							<% } %>	
+						</small>
+					</div>		
+
+					<div class="singup__form-group fg--password 
+					<%= typeof passwordrepeat != "undefined" ? `fg--show-passicon` : '' %> 
+					<% if (typeof errors != "undefined"){ %> 
+						<%= errors.find(err => err.errorPasswordRep) != undefined ? `fg--invalid` : ""; %> 
+						<% } %>"
+					>
+						<input type="password" placeholder="Repeat password" name="passwordrepeat" class="input--singup passwordrepeat requied showhints"
+						value="<%= typeof passwordrepeat != "undefined" ? passwordrepeat : "" %>">
+						<div class="singup__form-error">
+							<i class="far fa-eye" title="Show password"></i>
+							<img src="images/icon-error.svg" alt="" class="singup__form-error-exmark">
+						</div>
+						<small class="singup__form-validation-message">
+							<% if (typeof errors != "undefined"){ %>
+								<%= errors.find(err => err.errorPasswordRep) != undefined ? errors.find(err => err.errorPasswordRep).errorPasswordRep : ""; %>
+							<% } %>	
+						</small>
+					</div>
+
+					<!-- singup form optional fields -->
+					<h2 class="title title--optional">Optional fields</h2>						
+					
+					<div class="singup__form-group fg--profilepic">
+						<div class="singup__profilepic">
+							
+							<div class="singup__profilepic-left">
+								<img src="images/profilepic_default.png" alt="" class="singup_profilepic-img">
+							</div>	
+
+							<div class="singup__profilepic-right">											
+								<label for="file" class="input__label">Select a profile picture</label>
+								<div class="singup__profilepic-button">
+									<div class="singup__profilepic-choose">
+										<input type="file" name="profilepic" class="input--file">
+										<button type="button" class="button button--neutral button--profilepic">
+											<i class="fas fa-image"></i>
+											Choose file
+										</button>
+									</div>
+									<button type="button" class="button button--remove" title="Remove" id="button-remove">
+										<i class="fas fa-trash-alt"></i>
+									</button>
+								</div>	
+	
+							</div>							
+						</div>	
+						
+						<small class="singup__form-validation-message"></small>
+					</div>
+
+					<!-- Personal infomration -->
+					<h3 class="title title--h3">Personal infomration</h3>
+
+					<div class="singup__form-group">
+						<input type="text" placeholder="First name" name="firstname" class="input--singup optional showhints"
+						value="<%= typeof firstname != "undefined" ? firstname : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>
+					</div>
+
+					<div class="singup__form-group">
+						<input type="text" placeholder="Last name" name="lastname" class="input--singup optional showhints"
+						value="<%= typeof lastname != "undefined" ? lastname : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>
+					</div>
+
+					<div class="singup__form-group">
+						<label for="birthday" class="input__label">Date of birth</label>
+						<input type="date" name="dob" class="input--singup input--date" 
+						value="<%= typeof dob != "undefined" ? dob : "" %>">
+						<small class="singup__form-validation-message"></small>
+					</div>
+
+					<div class="singup__form-group">
+						<label for="male" class="input__label">Gender</label><br>						
+						<input type="radio" id="male" name="gender" value="Male" class="input--tovalidate" <%= typeof gender != "undefined" && gender === "male" ? `checked` : "" %>>
+						<label for="male">Male</label>
+						<input type="radio" id="female" name="gender" value="Female" class="input--tovalidate" <%= typeof gender != "undefined" && gender === "female" ? `checked` : "" %>>
+						<label for="female">Female</label>
+						<input type="radio" id="other" name="gender" value="Other" class="input--tovalidate" <%= typeof gender != "undefined" && gender === "other" ? `checked` : "" %>>
+						<label for="other">Other</label>
+						<small class="singup__form-validation-message"></small>
+					</div>
+
+					<!-- address -->
+					<h3 class="title title--h3">Contact</h3>
+					<div class="singup__form-group">
+						<input type="text" placeholder="Address" name="address" class="input--singup optional showhints"
+						value="<%= typeof address != "undefined" ? address : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>	
+					</div>
+
+					<div class="singup__form-group">	
+						<input type="text" placeholder="City" name="city" class="input--singup optional showhints"
+						value="<%= typeof city != "undefined" ? city : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>	
+					</div>	
+
+					<div class="singup__form-group">
+						<input type="text" placeholder="Postal code" name="postalcode" class="input--singup optional showhints"
+						value="<%= typeof postalcode != "undefined" ? postalcode : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>	
+					</div>	
+
+					<div class="singup__form-group">
+						<select name="country" class="input__sel-country input--singup select">
+							<option selected hidden disabled class="selectdefault">Select Country</option>
+						</select>	
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"></small>
+					</div>	
+
+					<!-- Website -->
+					<h3 class="title title--h3">Websites</h3>
+					<div class="singup__form-group">
+						<input type="text" placeholder="Personal website" name="personalwebsite" class="input--singup optional showhints"
+						value="<%= typeof personalwebsite != "undefined" ? personalwebsite : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>				
+					</div>		
+
+					<div class="singup__form-group">		
+						<input type="text" placeholder="Facebook profile" name="fbprofile" class="input--singup optional showhints"
+						value="<%= typeof fbprofile != "undefined" ? fbprofile : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>		
+					</div>	
+
+					<div class="singup__form-group">
+						<input type="text" placeholder="Instagram profile" name="instagramprofile" class="input--singup optional showhints"
+						value="<%= typeof instagramprofile != "undefined" ? instagramprofile : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>		
+					</div>	
+
+					<div class="singup__form-group">	
+						<input type="text" placeholder="Twitter account" name="twitteraccount" class="input--singup optional showhints"
+						value="<%= typeof twitteraccount != "undefined" ? twitteraccount : "" %>">
+						<div class="singup__form-error"></div>
+						<small class="singup__form-validation-message"><!--message--></small>									
+					</div>	
+					
+					<div class="singup__form-group">
+						<input type="submit" value="Register" class="button button--register">
+					</div>	
+
+					<small class="singup__form-terms">
+						By clicking the button, you are agreeing to our <strong><a href="#">Terms and Services</a></strong>
+					</small>	
+				</form>
+			
+			</div>

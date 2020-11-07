@@ -1,0 +1,5 @@
+node_modules
+.env
+public/js/validation old
+poznamky
+poznamky.txt

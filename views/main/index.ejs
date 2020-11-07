@@ -1,0 +1,22 @@
+<div>
+	<h1>Index page of main section</h1>
+		<ul>
+			<li>Nickname: <%= typeof user.nickname != "undefined" ? user.nickname : "" %></li>
+			<li>E-mail: <%= typeof user.email != "undefined" ? user.email : "" %></li>
+			<li>Name: 
+				<%= typeof user.firstname != "undefined" ? user.firstname : "" %> 
+				<%= typeof user.lastname != "undefined" ? user.lastname : "" %>
+			</li>
+			<li>Date of Birth: <%= typeof user.dob != "null" ? formatDate(user.dob, "D.MM.YYYY") : "" %></li>
+			<li>Adress: 
+				<%= typeof user.city != "undefined" ? user.city : "" %>, 
+				<%= typeof user.postalcode != "null" ? user.postalcode : "" %>
+				<%= typeof user.country != "undefined" ? user.country : "" %>
+			</li>
+			<li>Personal webiste: <%= typeof user.personalwebsite != "undefined" ? user.personalwebsite : "" %></li>
+			<li>Facebook profile: <%= typeof user.fbprofile != "undefined" ? user.fbprofile : "" %></li>
+			<li>Instagram profile: <%= typeof user.instagramprofile != "undefined" ? user.instagramprofile : "" %></li>
+			<li>Twitter profile: <%= typeof user.twitteraccount != "undefined" ? user.twitteraccount : "" %></li>
+		</ul>
+	<a href="/logout">Log out</a>
+</div>

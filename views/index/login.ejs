@@ -1,0 +1,37 @@
+<div class="singup__login-wrapper">
+	<div class="singup__form-wrapper">
+		<% if(success_msg.toString() != ""){ %>
+			<div class="message message-valid" style="display: block;">
+				<small><%= success_msg %></small>
+				<div class="message__btnClose" title="Close Message">X</div>
+			</div>			
+		<% } %>
+		<form method="POST" action="/login">
+			<div class="singup__form-group <%= typeof error_msg != "undefined" && error_msg.toString().includes("Email") ? `fg--invalid` : "" %>">
+				<input type="text" placeholder="Emial adress" name="email" class="input--singup">
+				<div class="singup__form-error"><img src="images/icon-error.svg" alt="" class="singup__form-error-exmark"></div>
+				<small class="singup__form-validation-message"><%= typeof error_msg != "undefined" && error_msg.toString().includes("Email") ? error_msg : "" %></small>
+			</div>
+			<div class="singup__form-group fg--password fg--show-passicon <%= typeof error_msg != "undefined" && error_msg.toString().includes("Password") ? `fg--invalid` : "" %>">	
+				<input type="password" placeholder="Password" name="password" class="input--singup">
+				<div class="singup__form-error">
+					<i class="far fa-eye" title="Show password"></i>
+					<img src="images/icon-error.svg" alt="" class="singup__form-error-exmark" class="singup__form-error-exmark">
+				</div>
+				<small class="singup__form-validation-message"><%= typeof error_msg != "undefined" && error_msg.toString().includes("Password") ? error_msg : "" %></small>		
+			</div>	
+			<div class="singup__form-group singup__form-col">
+				<input type="submit" value="Login" class="button button--neutral">
+			</div>	
+			<div class="singup__form-group singup__form-col" style="margin: 1rem 0 1.5rem 0;">
+				<button type="button" class="button button--col button--google">
+					<a href="/auth/google"><i class="fab fa-google"></i> Login with Google</a>
+				</button>
+				<button type="button" class="button button--col button--facebook">
+					<a href="/auth/facebook"><i class="fab fa-facebook"></i> Login with Facebook</a>
+				</button>
+			</div>
+			<p>Don't have an account yet? <a href="/register" style="color: inherit; text-decoration: underline">Register for free!</a></p>
+		<form>
+	</div>
+</div>

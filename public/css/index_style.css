@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+/* variables */
+:root {
+  --clr-background: hsl(0, 100%, 74%);
+  --clr-valid: #38cc8c;
+  --clr-invalid: hsl(0, 100%, 74%);
+  --clr-neutral: #999;
+  --clr-warning: #a18533;
+  --clr-accent: rgb(96,85,165);
+  --clr-font-primary: #000;
+  --clr-font-secondary: #fff;
+  --font-family: "Poppins", sans-serif;
+}
+
+/* reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+  color: var(--clr-font-primary);
+}
+
+.button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  border: none;
+  color: var(--clr-font-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+}
+
+.button--col {
+  flex: 0 1 50%;
+}
+
+.button--col:first-of-type {
+  margin-right: 0.5rem;
+}
+
+.button--col:last-of-type {
+  margin-left: 0.5rem;
+}
+
+.button--neutral {
+  background: var(--clr-neutral);
+}
+
+.button--register {
+  background: var(--clr-valid);
+}
+
+.button--google {
+  background: #db4437;
+}
+
+.button--facebook {
+  background: #3b5998;
+}
+
+.button--remove {
+  background: var(--clr-invalid);
+  flex: 1 1 20%;
+  min-width: 20%;
+  margin-left: 0.5rem;
+  display: none;
+}
+
+/* inputs */
+[type=file] {
+  cursor: pointer;
+}
+
+[type=file]::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input, select, option {
+  font-size: 0.9rem;
+  color: var(--font-primary);
+}
+
+input::placeholder {
+  color: var(--clr-neutral);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input--singup {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1.5px solid rgba(96, 85, 165, 0.5);
+  font-weight: 500;
+}
+
+.input--singup:focus {
+  outline: none;
+  border-color: var(--clr-font-primary);
+}
+
+.input--date {
+  font-family: var(--font-family);
+}
+
+.input__label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.input--file {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* headings */
+.title--h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.3rem;
+  line-height: 1;
+}
+
+.title--h2 {
+  font-size: 1.5rem;
+}
+
+.title--h3 {
+  margin: 1rem 0;
+}
+
+.title--optional {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.title--profilepic {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* icons */
+.fa-eye {
+  font-size: 1.2rem;
+  color: var(--clr-neutral);
+  cursor: pointer;
+  transform: scale(0);
+}
+
+.fa-trash-alt {
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.fa-image {
+  font-size: 1.2rem;
+}
+
+body {
+  background-color: var(--clr-background);
+  background-image: url("../images/bg-intro-desktop.png");
+  background-attachment: fixed;
+  color: var(--clr-font-primary);
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+/* General */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+a {
+  color: inherit;
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout */
+.singup {
+  display: flex;
+  padding: 5rem 0;
+}
+.singup > div {
+  flex: 1 1 50%;
+}
+.singup__fixed {
+  position: fixed;
+  right: 50vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 2rem;
+  max-width: 600px;
+  color: var(--clr-font-secondary);
+}
+.singup__already-registered {
+  background: var(--clr-accent);
+  color: var(--clr-font-secondary);
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.singup__login-wrapper {
+  height: calc(100vh - 10rem);
+  display: flex;
+  align-items: center;
+}
+.singup__login-wrapper a {
+  text-decoration: none;
+  color: var(--clr-font-secondary);
+}
+.singup__form-wrapper {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 2rem;
+  margin-top: 1rem;
+  color: #333;
+}
+.singup__form-group {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+.singup__form-col {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.singup__form-error {
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 3.2rem;
+  right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.singup__form-error-exmark {
+  /*background: #fff;*/
+  padding-left: 0.5rem;
+  display: none;
+}
+.singup__form-validation-message {
+  display: inline-block;
+  padding: 0.5rem 0;
+  width: 100%;
+  text-align: right;
+  transform: scale(0);
+}
+.singup__profilepic {
+  display: flex;
+  align-items: center;
+}
+.singup__profilepic-left img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.singup__profilepic-right {
+  margin-left: 2rem;
+  text-align: center;
+  flex: auto;
+  padding: 0;
+}
+.singup__profilepic-button {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.singup__profilepic-choose {
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 1 1 80%;
+  min-width: 80%;
+}
+.singup__form-terms {
+  margin-top: 1rem;
+  text-align: center;
+  display: block;
+}
+
+.message {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  position: relative;
+  display: none;
+}
+.message-valid {
+  color: var(--clr-valid);
+  background: rgba(92, 184, 92, 0.25);
+}
+.message-warning {
+  background: #fff3cd;
+  color: var(--clr-warning);
+}
+.message__btnClose {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  width: 2rem;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Invalid form */
+.fg--invalid .input--singup {
+  border-color: var(--clr-invalid);
+}
+
+.fg--invalid .singup__form-error-exmark {
+  display: block;
+}
+
+.fg--invalid small {
+  color: var(--clr-invalid);
+  transform: scale(1);
+}
+
+/* Show icon for password */
+.fg--show-passicon .fa-eye {
+  transform: scale(1);
+}
+
+/* Show remove button */
+.fg--show-removebutton {
+  display: block;
+}
+
+/*# sourceMappingURL=index_style.css.map */
