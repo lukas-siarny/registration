@@ -6,6 +6,7 @@ export default class SubmitForm extends UserForm{
     this.formSignUp = form;
     this.inputsRequied = inputs.filter(input => input.classList.contains("requied"));
     this.inputsOptional = inputs.filter(input => input.classList.contains("optional"));
+    this.errors = 0;
   }
 
   //submit all inputs
@@ -30,8 +31,12 @@ export default class SubmitForm extends UserForm{
       // submit atypical picture input
       this.submitPorfilePic(e);
 
-      this.renderMessageInfo();
-      window.scrollTo(0, 0);
+      // if errors > scroll to top and show erorr info msg
+      if(this.errors > 0){
+        this.renderMessageInfo();
+        window.scrollTo(0, 0);
+        this.errors = 0;
+      }
     });
   }
 
@@ -49,6 +54,7 @@ export default class SubmitForm extends UserForm{
       this.renderDefault(input);
     } else{
       e.preventDefault();
+      this.errors ++;
       this.renderMessageInvalid(input, inputRule.messageInvalid);
     } 
   }
@@ -65,6 +71,7 @@ export default class SubmitForm extends UserForm{
       this.renderDefault(input);
     } else{
       e.preventDefault();
+      this.errors ++;
       this.renderMessageInvalid(input, inputRule.messageInvalid);
     }  
   }
@@ -79,6 +86,7 @@ export default class SubmitForm extends UserForm{
       this.renderDefault(passwordRepeat); 
     } else{
       e.preventDefault();
+      this.errors ++;
       this.renderMessageInvalid(passwordRepeat, passRepRule.messageInvalid);
     } 
   }
@@ -95,6 +103,7 @@ export default class SubmitForm extends UserForm{
 
     if(!this.checkPicTypeSize(file)){
       e.preventDefault();
+      this.errors ++;
       this.renderMessagePofilePic(message);
     } 
   }

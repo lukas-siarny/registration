@@ -95,6 +95,7 @@ router.post("/register", (req,res) => {
 					nickname, email, password, passwordrepeat, firstname, lastname, dob, gender, adress, city, postalcode, country, personalwebsite, fbprofile, instagramprofile, twitteraccount					
 				},)
 			} else{
+                errors = [];
 				//if no errors => create one: const newUser = new User({ all varibles });
 				const newUser = new User({
 					nickname, email, password, passwordrepeat, profilepic, firstname, lastname, dob, gender, adress, city, postalcode, country, personalwebsite, fbprofile, instagramprofile, twitteraccount

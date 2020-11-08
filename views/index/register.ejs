@@ -4,7 +4,7 @@
 
 			<div class="singup__form-wrapper">
 				
-				<div class="message message-warning" style = "<%= typeof errors != "undefined" ? "display: block" : "" %>">
+				<div class="message message-warning" style = "<%= typeof errors != "undefined" && errors != [] ? "display: block" : "" %>">
 					<small>Registration failed. Please check your form for errors.</small>
 					<div class="message__btnClose" title="Close Message">X</div>
 				</div>
