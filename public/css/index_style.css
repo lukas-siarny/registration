@@ -76,6 +76,32 @@ input:-webkit-autofill:active {
   display: none;
 }
 
+@media (max-width: 1024px) {
+  .button--col:first-of-type {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .button--col:last-of-type {
+    margin-left: 0;
+  }
+}
+@media (max-width: 550px) {
+  .button--profilepic {
+    width: auto;
+  }
+
+  .button--remove {
+    width: auto;
+    flex: 0 1 auto;
+    min-width: auto;
+  }
+}
+@media (max-width: 450px) {
+  .button--profilepic {
+    font-size: 0.9rem;
+  }
+}
 /* inputs */
 [type=file] {
   cursor: pointer;
@@ -154,6 +180,21 @@ input::placeholder {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .title--h1 {
+    margin-bottom: 0rem;
+  }
+}
+@media (max-width: 550px) {
+  .title--h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 400px) {
+  .title--h1 {
+    font-size: 1.5rem;
+  }
+}
 /* icons */
 .fa-eye {
   font-size: 1.2rem;
@@ -172,6 +213,11 @@ input::placeholder {
   font-size: 1.2rem;
 }
 
+@media (max-width: 550px) {
+  .fa-trash-alt {
+    margin-left: 0;
+  }
+}
 body {
   background-color: var(--clr-background);
   background-image: url("../images/bg-intro-desktop.png");
@@ -206,7 +252,8 @@ img {
 /* Layout */
 .singup {
   display: flex;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .singup > div {
   flex: 1 1 50%;
@@ -220,6 +267,7 @@ img {
   flex-direction: column;
   justify-content: center;
   padding-right: 2rem;
+  padding-left: 2rem;
   max-width: 600px;
   color: var(--clr-font-secondary);
 }
@@ -271,7 +319,7 @@ img {
   align-items: center;
 }
 .singup__form-error-exmark {
-  /*background: #fff;*/
+  background: #fff;
   padding-left: 0.5rem;
   display: none;
 }
@@ -371,6 +419,147 @@ img {
 /* Show remove button */
 .fg--show-removebutton {
   display: block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: 600px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .singup {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    flex-direction: column;
+  }
+  .singup__login-wrapper {
+    height: auto;
+    display: block;
+  }
+  .singup__right {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .singup__fixed {
+    position: relative;
+    right: 0;
+    height: auto;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .singup__fixed p {
+    display: none;
+  }
+  .singup__already-registered {
+    margin-top: 2rem;
+  }
+  .singup__notregistered {
+    text-align: center;
+  }
+  .singup__form-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .singup__form-validation-message {
+    text-align: left;
+  }
+}
+@media (max-width: 550px) {
+  .singup {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .singup__fixed {
+    margin-bottom: 3rem;
+  }
+  .singup__already-registered {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+  .singup__profilepic {
+    display: block;
+    text-align: center;
+    position: relative;
+  }
+  .singup__profilepic-left img {
+    width: 200px;
+    height: 200px;
+  }
+  .singup__profilepic-right {
+    position: absolute;
+    margin-left: 0;
+    text-align: center;
+    flex: auto;
+    padding: 0;
+    bottom: 0;
+    width: 90%;
+    transform: translate(-10%, 30%);
+    margin-bottom: 1rem;
+  }
+  .singup__profilepic-right label {
+    display: none;
+  }
+  .singup__profilepic-button {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .singup__profilepic-choose {
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-width: auto;
+    flex: 0 1 auto;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  small {
+    font-size: 0.7rem;
+  }
+
+  .singup {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .singup__form-wrapper {
+    padding: 1rem;
+  }
+  .singup__fixed {
+    margin-bottom: 2rem;
+  }
+  .singup__profilepic-right {
+    width: 100%;
+    transform: translate(0%, 30%);
+  }
+}
+@media (max-width: 275px) {
+  .singup__profilepic-left img {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 /*# sourceMappingURL=index_style.css.map */

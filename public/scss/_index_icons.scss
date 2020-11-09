@@ -8,11 +8,16 @@
 
 .fa-trash-alt{
 	font-size: 1.2rem;
-	//color: var(--clr-invalid);
 	cursor: pointer;
 	margin-left: 0.5rem;
 }
 
 .fa-image{
 	font-size: 1.2rem;
+}
+
+@media (max-width: 550px){
+    .fa-trash-alt{
+        margin-left: 0;
+    }
 }

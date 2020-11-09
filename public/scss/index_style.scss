@@ -38,7 +38,8 @@ img{
 /* Layout */
 .singup{
 	display: flex;
-	padding: 5rem 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
 	& > div{
 		flex: 1 1 50%;
@@ -52,7 +53,8 @@ img{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding-right: 2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
 		max-width: 600px;
 		color: var(--clr-font-secondary);
 	}
@@ -71,7 +73,7 @@ img{
 	&__login-wrapper{
 		height: calc(100vh - 10rem); 
 		display: flex; 
-		align-items: center;
+        align-items: center;
 
 		& a{
 			text-decoration: none;
@@ -112,7 +114,7 @@ img{
 	}
 	
 	&__form-error-exmark{
-		/*background: #fff;*/
+		background: #fff;
 		padding-left: 0.5rem;
 		display: none;
 	}
@@ -204,8 +206,6 @@ img{
 	}
 }
 
-
-
 /* Invalid form */
 .fg--invalid .input--singup{
 	border-color: var(--clr-invalid);
@@ -230,3 +230,5 @@ img{
 .fg--show-removebutton{
 	display: block;
 }
+
+@import "_index_media"
